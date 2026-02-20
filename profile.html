@@ -1,0 +1,57 @@
+
+<html>
+<head>
+    
+    <title>Profile Card</title>
+
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+<div class="card">
+
+    <!-- TOP PART -->
+    <div class="card-top"></div>
+
+    <!-- PROFILE IMAGE -->
+    <div class="profile-img">
+        <img src="D:\pradnya\1708339784123.jpg" alt="Profile">
+    </div>
+
+    <!-- BOTTOM PART -->
+    <div class="card-bottom">
+        <h2>Pradnya Ghodke</h2>
+        <span>Web Developer</span>
+
+        <p>
+            I chose to design web applications ,because i am intrested in this and i am also designer with amazing ideas.
+        </p>
+
+        <div class="buttons">
+            <button class="follow-btn" onclick="speakThanks()">Follow</button>
+            
+        </div>
+
+        <!-- SOCIAL ICONS -->
+        <div class="logo-row">
+            <a href="https://www.instgram.com/itz_dreamer_117/" target="_blank">
+    <img src="C:\Users\PRADNYA\OneDrive\Desktop\internship html\img\OIP (4).jpg"></a>
+    <img src="C:\Users\PRADNYA\OneDrive\Desktop\internship html\img\OIP (5).jpg">
+    <img src="C:\Users\PRADNYA\OneDrive\Desktop\internship html\img\OIP (6).jpg">
+    <img src="C:\Users\PRADNYA\OneDrive\Desktop\internship html\img\OIP (7).jpg">
+</div>
+
+
+    </div>
+
+</div>
+
+<script>
+function speakThanks() {
+    const msg = new SpeechSynthesisUtterance("Thank you for following");
+    window.speechSynthesis.speak(msg);
+}
+</script>
+
+</body>
+</html>
