@@ -1,0 +1,21 @@
+body{
+    background-color: black;
+}
+.box{
+    background-color: pink;
+    display: grid;
+    height: 600px;
+    width:600px;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: repeat(8,1fr);
+    border: 2px solid white;
+    box-shadow: 0 6px 15px white;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.in1{
+    background-color:white;
+}
+.in2{
+    background-color: black;
+}

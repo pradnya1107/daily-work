@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marks Form</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-top: 15px;
+            width: 60%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Student Marks Form</h2>
+
+    <label>Student Name:</label>
+    <input type="text" id="name"><br><br>
+
+    <label>Subject:</label>
+    <input type="text" id="subject"><br><br>
+
+    <label>Marks:</label>
+    <input type="number" id="marks"><br><br>
+
+    <button onclick="addStudent()">Submit</button>
+    <button onclick="clearForm()">Clear</button>
+    <button onclick="showData()">Check</button>
+
+    <div id="result"></div>
+
+    <script>
+        let students = [];
+
+        function addStudent() {
+            let name = document.getElementById("name").value;
+            let subject = document.getElementById("subject").value;
+            let marks = document.getElementById("marks").value;
+
+            if (name === "" || subject === "" || marks === "") {
+                alert("Please fill all fields");
+                return;
+            }
+
+            students.push({
+                name: name,
+                subject: subject,
+                marks: marks
+            });
+
+            clearForm();
+            alert("Student data added");
+        }
+
+        function clearForm() {
+            document.getElementById("name").value = "";
+            document.getElementById("subject").value = "";
+            document.getElementById("marks").value = "";
+        }
+
+        function showData() {
+            if (students.length === 0) {
+                document.getElementById("result").innerHTML = "No data available";
+                return;
+            }
+
+            let table = `
+                <table>
+                    <tr>
+                        <th>Sr.No</th>
+                        <th>Name</th>
+                        <th>Subject</th>
+                        <th>Marks</th>
+                    </tr>
+            `;
+
+            students.forEach((student, index) => {
+                table += `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${student.name}</td>
+                        <td>${student.subject}</td>
+                        <td>${student.marks}</td>
+                    </tr>
+                `;
+            });
+
+            table += `</table>`;
+
+            document.getElementById("result").innerHTML = table;
+        }
+    </script>
+
+</body>
+</html>

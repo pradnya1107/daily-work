@@ -1,0 +1,41 @@
+p{
+    border-top-style:dashed;
+    border-right-style: dotted;
+    border-bottom-style:double;
+    border-left-style:solid;
+
+    
+    border-style: solid dashed double;
+
+    border-top-color:aqua;
+    border-right-color: bisque;
+    border-bottom-color: black;
+
+    
+
+    border-top-width: 5px;
+    border-left-width: 7px;
+    border-width: 5px  3pxx;
+}
+div{
+    background-color: antiquewhite;
+    background-image: linear-gradient(to right bottom );
+    height: 100px;
+    width: 200px;
+    margin-left: 15px;
+    margin-top: 50px;
+    margin-bottom: 70px;
+}
+h1{
+    margin:0;
+    border: 2px solid gray;
+    outline-style:dashed;
+    outline-color: chocolate;
+    outline-width: 3px;
+    outline-offset: 4px;
+}
+body{
+    margin:0;s
+}
+
+    

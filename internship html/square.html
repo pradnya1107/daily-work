@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>doc</title>
+    </head>
+    <body>
+        <script>
+            let nums=[1,2,3,4,5];
+            let sq=nums.map((n)=>n*n);
+            console.log(sq);
+
+            let marks=[23,45,67,89,90];
+            marks.forEach((val)=>{console.log(val)});
+            
+            let fmarks=marks.map((ans)=>ans+10);
+            console.log(fmarks);
+
+            //filter--
+            let ans=marks.filter((op)=>op >=50);
+            console.log(ans);
+
+            //reduce
+            let a=[10,20,30,40];
+            let res=a.reduce((sum,n)=>{return sum+n});
+            console.log(res);
+
+            ///print odd/even numbers       
+            let b=[21,45,67,88,26,98,66]
+            let ans1=b.reduce((count,n)=>{
+                if (n%2==0){
+                    count++;
+                }
+                return count;
+            },0);
+            console.log(ans1);
+
+            let c=[21,34,55,78,87,56];
+            let a1=c.find((n)=> n>=50);
+            console.log(a1);
+
+            let ab=[56,57];
+            let bc=[58,59];
+            let abc=ab.concat(bc);
+            console.log(abc);
+
+            let op1=ab.indexOf(56);
+            console.log(op1);
+
+            let op2=ab.findIndex((n)=> n>56);
+            console.log(op2);
+
+            console.log(bc.includes(59));
+            console.log(bc.reverse());
+            console.log(c.sort());
+
+            let x=[12,13,14,15];
+            console.log(x.slice(0,3));
+            let xans=x.splice(1,1,23);
+            console.log(x);
+
+            let x1=[12,13,14,15,19,70];
+            console.log(x.slice(0,3));
+             let x1ans=x.splice(2,2,24);
+             console.log(x1);
+        </script>
+    </body>
+</html>

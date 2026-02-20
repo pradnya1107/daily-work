@@ -1,0 +1,49 @@
+div{
+    height: 200px;
+    width: 200px;
+    background-color: brown;
+    animation-name: move;
+    position: relative;
+    animation-duration: 5s;
+    /* border-radius:50% ; */
+    animation-timing-function: ease;
+    animation-iteration-count:infinite;
+    animation-direction: alternate;
+    box-shadow: 0 6px 15px black;
+
+} 
+/* .div:hover{
+    background-color: antiquewhite; */
+
+@keyframes move{
+    0%{
+        
+         background-color: aqua;
+         left:100px;
+         top: 0px;
+    } 
+    30%{
+        background-image:url(./img/OIP\ \(10\).jpg);
+        left:500px;
+         top: 0px;
+    }   
+    70%{
+        background-color: chartreuse;
+        left:500px;
+         top: 500px;
+         border-radius: 50%;
+    }
+    75%{
+        
+         background-image:url(./img/OIP\ \(10\).jpg);
+        left:0px;
+        top:500px;
+    }
+    100%{
+        background-color: blue;
+        left:0px;
+         top: 0px;
+    }
+
+    
+}

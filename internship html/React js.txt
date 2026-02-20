@@ -1,0 +1,15 @@
+React js
+1dom(document object modules)1html page,it takes min time to load the website
+html,css,js 
+number of html,css,pages  same dom pages.,it takes time to load page
+
+
+javascript-
+datatype
+typecasting
+basic  -loop if ....for
+array -map,filter,reduce
+object -
+fuction -arrow,IIfE,normal,anonymus
+arrow===()=>{}ex:a=>10
+string -"hello" 'hello'`hello $

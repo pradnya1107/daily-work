@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All 4 Patterns</title>
+</head>
+
+<body>
+    <script>
+        let n = 4;
+        let i, j;
+        let op = "";
+
+        // 1️⃣ Solid Square
+        op += "1) Solid Square\n";
+        for (i = 1; i <= n; i++) {
+            for (j = 1; j <= n; j++) {
+                op += "* ";
+            }
+            op += "\n";
+        }
+
+        op += "\n";
+
+        // 2️⃣ Hollow Square
+        op += "2) Hollow Square\n";
+        for (i = 1; i <= n; i++) {
+            for (j = 1; j <= n; j++) {
+                if (i === 1 || i === n || j === 1 || j === n)
+                    op += "* ";
+                else
+                    op += "  ";
+            }
+            op += "\n";
+        }
+
+        op += "\n";
+
+        // 3️⃣ Right-Angled Triangle
+        op += "3) Right-Angled Triangle\n";
+        for (i = 1; i <= n; i++) {
+            for (j = 1; j <= i; j++) {
+                op += "* ";
+            }
+            op += "\n";
+        }
+
+        op += "\n";
+
+        // 4️⃣ Number Triangle
+        op += "4) Number Triangle\n";
+        for (i = 1; i <= n; i++) {
+            for (j = 1; j <= i; j++) {
+                op += i + " ";
+            }
+            op += "\n";
+        }
+
+        document.write("<pre>" + op + "</pre>");
+    </script>
+</body>
+</html>

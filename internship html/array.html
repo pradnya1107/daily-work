@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <!-- <h1>Students List</h1>
+        <ul id="list">
+        </ul>
+        <script>
+            let students=["abc","def","ghy","xyz","mnr"];
+            let ul=document.getElementById("list");
+            for(let i=0;i<students.length;i++){
+                ul.innerHTML+="<li>"+students[i]+"</li>";
+            }
+            </script> -->
+
+            <!-- <h1>Student Info</h1>
+            <input type="text" id="item" placeholder="enter name"/>
+            <button onclick="addStudent()">Add</button>
+             <p id="list"></p>
+           
+
+            <script>
+                let students=[]
+                function addStudent()
+                {
+                    let val=document.getElementById("item").value;
+                    students.push(val);
+                    document.getElementById("list").innerText=students.join(" ");
+
+                }
+              -->
+              
+        <h2>Student Info</h2>
+
+<form>
+  <input type="text" id="name" placeholder="enter name" />
+  <input type="text" id="sub" placeholder="enter subject" />
+  <input type="text" id="marks" placeholder="enter marks" />
+  <br /><br />
+
+  <button type="button" onclick="addData()">Submit</button>
+  <button type="reset">Reset</button>
+  <button type="button" onclick="show()">Show</button>
+
+  <br /><br />
+
+  <table border="1" style="display: none" id="table">
+    <thead>
+      <tr>
+        <th>Sr No</th>
+        <th>Name</th>
+        <th>Subject</th>
+        <th>Marks</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+</form>
+
+<script>
+  let data = [];
+
+  function addData() {
+    let name = document.getElementById("name").value;
+    let sub = document.getElementById("sub").value;
+    let marks = document.getElementById("marks").value;
+
+    if (name === "" || sub === "" || marks === "") {
+      alert("Please fill all fields");
+      return;
+    }
+
+    data.push({
+      name: name,
+      sub: sub,
+      marks: marks,
+    });
+
+    alert("Data added successfully");
+  }
+
+  function show() {
+    let op = document.getElementById("tbody");
+    op.innerHTML = ""; // clear old rows
+
+    for (let i = 0; i < data.length; i++) {
+      op.innerHTML +=
+        "<tr>" +
+        "<td>" + (i + 1) + "</td>" +
+        "<td>" + data[i].name + "</td>" +
+        "<td>" + data[i].sub + "</td>" +
+        "<td>" + data[i].marks + "</td>" +
+        "</tr>";
+    }
+
+    document.getElementById("table").style.display = "block";
+  }
+</script>
+
+
+
+    </body>
+    </html>
+           
+
+            
+             

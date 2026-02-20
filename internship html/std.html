@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marks System</title>
+    <style>
+        table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+        th, td { border: 1px solid #aaa; padding: 8px; text-align: center; }
+        button { margin: 3px; }
+    </style>
+</head>
+<body>
+
+<h2>Student Marks Management</h2>
+
+<input id="name" placeholder="Name">
+<input id="m1" type="number" placeholder="Sub1">
+<input id="m2" type="number" placeholder="Sub2">
+<input id="m3" type="number" placeholder="Sub3">
+<button onclick="addStudent()">Add</button>
+
+<br><br>
+
+<button onclick="filterGrade('A')">Fail</button>
+<button onclick="filterGrade('B')">Average</button>
+<button onclick="filterGrade('C')">Excellent</button>
+<button onclick="showAll()">Show All</button>
+<button onclick="sortMarks()">Sort Marks</button>
+
+<p id="stats"></p>
+
+<table>
+<thead>
+<tr>
+    <th>Name</th>
+    <th>Total</th>
+    <th>%</th>
+    <th>CGPA</th>
+    <th>Grade</th>
+    <th>Action</th>
+</tr>
+</thead>
+<tbody id="table"></tbody>
+</table>
+
+<button onclick="prevPage()">Prev</button>
+<button onclick="nextPage()">Next</button>
+
+<script>
+let students = [];
+let page = 1;
+let perPage = 5;
+
+function calculate(marks) {
+    let total = marks.reduce((a,b)=>a+b,0);
+    let percent = total / (marks.length * 100) * 100;
+    let cgpa = (percent / 10).toFixed(2);
+    let grade = percent < 35 ? "A" : percent <= 70 ? "B" : "C";
+    return { total, percent: percent.toFixed(2), cgpa, grade };
+}
+
+function addStudent() {
+    let name = nameInput.value;
+    let marks = [+m1.value, +m2.value, +m3.value];
+    let result = calculate(marks);
+
+    students.push({ name, marks, ...result });
+    render();
+}
+
+function deleteStudent(i) {
+    students.splice(i,1);
+    render();
+}
+
+function render(list = students) {
+    let start = (page-1)*perPage;
+    let end = start + perPage;
+    let rows = "";
+
+    list.slice(start,end).forEach((s,i)=>{
+        rows += `
+        <tr>
+            <td>${s.name}</td>
+            <td>${s.total}</td>
+            <td>${s.percent}</td>
+            <td>${s.cgpa}</td>
+            <td>${s.grade}</td>
+            <td><button onclick="deleteStudent(${i})">Delete</button></td>
+        </tr>`;
+    });
+
+    table.innerHTML = rows;
+    showStats();
+}
+
+function filterGrade(g) {
+    render(students.filter(s=>s.grade===g));
+}
+
+function showAll() {
+    render(students);
+}
+
+function sortMarks() {
+    students.sort((a,b)=>a.total-b.total);
+    render();
+}
+
+function highestMarks() {
+    let groups = {A:0,B:0,C:0};
+    students.forEach(s=>{
+        groups[s.grade] = Math.max(groups[s.grade], s.total);
+    });
+    return groups;
+}
+
+function showStats() {
+    let pass = students.filter(s=>s.grade!=="A").length;
+    let fail = students.length - pass;
+    let high = highestMarks();
+
+    stats.innerHTML = `
+        Pass: ${pass} | Fail: ${fail}<br>
+        Highest → A:${high.A} B:${high.B} C:${high.C}
+    `;
+}
+
+function nextPage(){ page++; render(); }
+function prevPage(){ if(page>1) page--; render(); }
+</script>
+
+</body>
+</html>

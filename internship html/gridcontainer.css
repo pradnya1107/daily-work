@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: #1e1e2f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Grid container */
+.grid-container {
+  width: 800px;
+  height: 500px;
+  display: grid;
+  gap: 15px;
+  padding: 15px;
+  background: #1e1e2f;
+
+  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-rows: 80px 1fr 1fr 80px;
+
+  grid-template-areas:
+    "header header header"
+    "sidebar content1 content1"
+    "sidebar content2 content3"
+    "footer footer footer";
+}
+
+/* Common style */
+.grid-container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+  border-radius: 8px;
+}
+
+/* Areas */
+.header {
+  grid-area: header;
+  background: #7b6cf6;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background: #2ec4b6;
+}
+
+.content1 {
+  grid-area: content1;
+  background: linear-gradient(135deg, #5f6cf6, #3aa0ff);
+}
+
+.content2 {
+  grid-area: content2;
+  background: linear-gradient(135deg, #5f6cf6, #3aa0ff);
+}
+
+.content3 {
+  grid-area: content3;
+  background: linear-gradient(135deg, #5f6cf6, #3aa0ff);
+}
+
+.footer {
+  grid-area: footer;
+  background: #7b6cf6;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Agentic Chatbot</title>
+<style>
+body { font-family: Arial; background:#111; color:#fff; }
+#chat { width:400px; margin:auto; }
+input { width:80%; }
+button { width:18%; }
+</style>
+</head>
+<body>
+
+<div id="chat">
+  <h2>Agentic AI Bot</h2>
+  <div id="messages"></div>
+  <input id="userInput" placeholder="Type message..." />
+  <button onclick="send()">Send</button>
+</div>
+
+<script>
+function send() {
+  let input = document.getElementById("userInput").value;
+
+  fetch("http://localhost:5000/chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message: input })
+  })
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("messages").innerHTML += 
+      `<p><b>You:</b> ${input}</p>
+       <p><b>Bot:</b> ${data.reply}</p>`;
+  });
+}
+</script>
+
+</body>
+</html>

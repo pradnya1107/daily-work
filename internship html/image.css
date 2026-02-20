@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
+
+h1 {
+  font-size: 60px;
+  color: #bbb;
+  margin-bottom: 40px;
+}
+
+.wrapper {
+  display: flex;
+  gap: 120px;
+}
+
+/* hide checkbox */
+input {
+  display: none;
+}
+
+/* demo box */
+.demo {
+  width: 120px;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* image */
+.demo img {
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+  border: 5px solid black;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+
+  transition-property: transform, box-shadow;
+  transition-duration: 1.2s;
+}
+
+/* timing functions */
+.ease-in img {
+  transition-timing-function: ease-in;
+}
+
+.ease-out img {
+  transition-timing-function: ease-out;
+}
+
+/* click effect */
+input:checked + img {
+  transform: translateX(260px) scale(2.4);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.demo p {
+  font-size: 22px;
+  margin-top: 15px;
+}

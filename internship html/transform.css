@@ -1,0 +1,65 @@
+.original{
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+    transform: translate(50px,80px);
+    transform: rotate(-60deg);
+    transform: scale(3,7);
+    transform: skew(-30deg,40deg);
+
+}
+.copy{
+    height: 100px;
+    width: 100px;
+    background-color: bisque;
+    /* transform: translate(50px,80px); */
+    /* transform: rotate(-60deg); */
+    /* transform: scaleX(3); */
+    /* transform: skew(30deg,20deg); */
+    transition: 2s;
+}
+.copy:hover{
+    background-color: azure;
+    transform: rotate(360deg);
+}
+div{
+    height: 100px;
+    width: 100px;
+    background-color: chocolate;
+    margin: 10px;
+    transition: 5s;
+    transition-delay: 2s;
+    transform:rotate(90deg)
+
+}
+/* .ease:hover{
+    transition-timing-function: ease;
+    background-color: aqua;
+    width: 400px;
+}
+.linear:hover{
+    background-color: blueviolet;
+    transition-timing-function: linear;
+    width: 400px;
+}
+.ease-in:hover{
+    background-color: burlywood;
+    width: 400px;
+    transition-timing-function: ease-in;
+}
+.ease-out:hover{
+    background-color: chartreuse;
+    width: 400px;
+    transition-timing-function: ease-out;
+}
+.ease-in-out{
+    background-color: cadetblue;
+    width: 400px;
+    transition-timing-function: ease-in-out;
+} */
+.abc:hover{
+    background-color: black;
+    height: 500px;
+    width: 500px;
+    transform:rotate(360deg)
+}

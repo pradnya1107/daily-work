@@ -1,0 +1,32 @@
+.container{
+    background-color: black;
+    height: 500px;
+    width: 500px;
+
+}
+.box{
+    display:grid;
+    background-color: pink;
+    grid-template-columns: auto auto auto auto;
+    gap:10px;
+    padding: 0;
+    margin: 0;
+}
+div{
+    background-color: bisque;
+    padding:50px;
+}
+.item1{
+    background-color: aqua;
+    grid-row-start: 2;
+}
+.item4{
+    background-color: blueviolet;
+    grid-row-start: 2;
+    grid-column-start: 3;
+}
+.item3{
+    background-color: chartreuse;
+    grid-row-start: 2;
+    grid-column-start: 4;
+}

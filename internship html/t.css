@@ -1,0 +1,33 @@
+body{
+    background-color: antiquewhite;
+}
+div{
+    height: 100px;
+    width:100px;
+    background-color: blueviolet;
+    margin:15px;
+    transition: 2s;
+     box-shadow: 0 6px 15px black;
+     margin: 70px;
+   
+}
+
+.a:hover{
+    background-color: rgb(255, 0, 157);
+height: 500px;
+width: 500px;
+transform: rotate(360deg);
+border-radius: 50%;
+}
+.a img{
+    width: 100%;
+    height:100%;
+     opacity: 0; 
+     transition: opacity 0.5s ease;
+}
+.a:hover img{
+     transition-delay: 2s; 
+     opacity:1;
+    border-radius: 50%;
+    box-shadow: 0 6px 15px black;
+}

@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>document</title>
+    </head>
+    <body>
+        <h1> Details </h1>
+        name:<input type="text"name="fname"id="fname"/><br/>
+        age:<input type="number"name="age"id="age"/><br/>
+        <button onclick="disply()">click me**</button>
+        <br>
+        <br>
+        <h1>OUTPUT</h1>
+        <p id="demo"></p>
+        <script>
+            function disply(){
+                //data call//
+                let fname=document.getElementById("fname").value;
+                let age=document.getElementById("age").value;
+                
+                //value set browser
+                localStorage.setItem("username",fname);
+
+                //ref next page
+                window.location.href="welcome.html";
+
+            }
+        </script>
+        </body>
+        </html>

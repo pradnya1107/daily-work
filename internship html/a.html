@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>A</title>
+    </head>
+    <style>
+        div{
+            height: 200px;
+            width: 200px;
+            background-color: bisque;
+            position: relative;
+            margin-bottom: 5px;
+            animation-name: move;
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-fill-mode: forwards;
+        }
+        #div1 {animation-timing-function: linear;}
+#div2 {animation-timing-function: ease;}
+#div3 {animation-timing-function: ease-in;}
+#div4 {animation-timing-function: ease-out;}
+#div5 {animation-timing-function: ease-in-out;}
+        @keyframes move{
+            from{
+                top:0px;
+                left: 100px;
+            }
+            to{
+                top:0px;
+                left: 300px;
+                background-color: blueviolet;
+            }
+        }
+
+    </style>
+    <body>
+        <div id="div1">linear</div>
+         <div id="div2">ease</div>
+          <div id="div3">ease-in</div>
+           <div id="div4">ease-out</div>
+            <div id="div5">ease-in-out</div>
+    </body>
+</html>

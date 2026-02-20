@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+}
+
+/* Background gradient – same as image */
+.bg {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right,
+        #6a11cb,
+        #2575fc,
+        #43cea2);
+}
+
+/* Form card */
+.form-card {
+    background: #ffffff;
+    width: 360px;
+    padding: 30px 25px;
+    border-radius: 10px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.form-card h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Input with icons */
+.input-box {
+    position: relative;
+    margin-bottom: 18px;
+}
+
+.input-box i {
+    position: absolute;
+    top: 12px;
+    left: 5px;
+    color: #666;
+}
+
+.input-box input,
+.input-box select,
+.input-box textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #999;
+    padding: 8px 5px 8px 30px;
+    outline: none;
+    font-size: 14px;
+}
+
+textarea {
+    resize: none;
+    height: 60px;
+}
+
+/* Sections */
+.section {
+    margin-bottom: 15px;
+}
+
+.section p {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.section label {
+    display: block;
+    font-size: 13px;
+    margin-left: 5px;
+}
+
+/* Submit button */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(to right, #d66efd, #5f72ff);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+select.underline-select {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #999;
+    padding: 8px 5px;
+    outline: none;
+    margin-top: 5px;
+    background: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}

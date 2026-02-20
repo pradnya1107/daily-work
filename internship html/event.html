@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="add" onclick="add()">Add Event</button>
+    <button id="remove" onclick="remove()">Remove Event</button>
+
+    <ul id="list">
+      <li>Apple</li>
+    </ul>
+
+    <script>
+      function add() {
+        let li = document.createElement("li");
+        li.innerText = "Banana";
+        document.getElementById("list").appendChild(li);
+      }
+
+      function remove() {
+        let list_item = document.getElementById("list");
+        if (list_item.children.length > 0) {
+          list_item.removeChild(list_item.lastChild);
+        }
+      }
+    </script>
+  </body>
+</html>
